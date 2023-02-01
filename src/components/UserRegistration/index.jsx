@@ -1,21 +1,65 @@
 
+import { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
-export default function UserRegistration ({ magicLinkLogin, setEmail }) {
-  return (
-    <>
-      <h1>Welcome to ImageSaver</h1>
-      <Form onSubmit={(e) => {
-        e.preventDefault()
-        magicLinkLogin()
-      }}
-      >
-        <Form.Group className='mb-3' style={{ maxWidth: '500px' }}>
-          <Form.Label>Enter an email to sign in with a Supabase Magic Link</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' onChange={(e) => setEmail(e.target.value)} />
-        </Form.Group>
-        <Button variant='primary'>Get Magic Link</Button>
-      </Form>
-    </>
-  )
+export default function UserRegistration ({ singUp, singIn, setEmail, setPassword }) {
+  const [type, setType] = useState('SignUp')
+  if (type === 'SignUp') {
+    return (
+
+      <>
+        <h1>ImageSaver</h1>
+        <Form>
+          <Form.Group className='mb-3' style={{ maxWidth: '500px', display: 'flex', gap: '8px', flexDirection: 'column' }}>
+            <Form.Label>Registrate para entrar en la web</Form.Label>
+            <Form.Control type='email' placeholder='Inserta un email...' onChange={(e) => setEmail(e.target.value)} />
+            <Form.Control autoComplete='current-password' type='password' placeholder='Inserta una contraseña...' onChange={(e) => setPassword(e.target.value)} />
+          </Form.Group>
+          <Button
+            onClick={(e) => {
+              e.preventDefault()
+              singUp()
+            }} variant='primary'
+          >Registrarse
+          </Button>
+        </Form>
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            setType('SignIn')
+          }} style={{ background: 'none', color: '#0d92ff', textDecoration: 'underline' }}
+        >Iniciar Sesión
+        </button>
+      </>
+    )
+  }
+  if (type === 'SignIn') {
+    return (
+
+      <>
+        <h1>ImageSaver</h1>
+        <Form>
+          <Form.Group className='mb-3' style={{ maxWidth: '500px', display: 'flex', gap: '8px', flexDirection: 'column' }}>
+            <Form.Label>Inicia Sesión</Form.Label>
+            <Form.Control type='email' placeholder='Inserta tu email...' onChange={(e) => setEmail(e.target.value)} />
+            <Form.Control autoComplete='current-password' type='password' placeholder='Inserta tu contraseña...' onChange={(e) => setPassword(e.target.value)} />
+          </Form.Group>
+          <Button
+            onClick={(e) => {
+              e.preventDefault()
+              singIn()
+            }} variant='primary'
+          >Iniciar Sesión
+          </Button>
+        </Form>
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            setType('SignUp')
+          }} style={{ background: 'none', color: '#0d92ff', textDecoration: 'underline' }}
+        >Registrarse
+        </button>
+      </>
+    )
+  }
 }

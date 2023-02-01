@@ -1,9 +1,10 @@
 #root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   padding: 2rem;
   margin: 0 auto;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 

@@ -12,6 +12,7 @@ function App () {
   const user = useUser()
   const supabase = useSupabaseClient()
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [images, setImages] = useState([])
 
   const CDNURL = 'https://keupyfhcksedgvzqhesn.supabase.co/storage/v1/object/public/images/'
@@ -42,15 +43,30 @@ function App () {
     })
   }
 
-  async function magicLinkLogin () {
-    const { data, error } = await supabase.auth.signInWithOtp({
-      email, options: { emailRedirectTo: 'https://image-saver.vercel.app' }
+  async function singUp () {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password
     })
 
+    if (data) {
+      console.log(data)
+    }
     if (error) {
-      console.log(error)
-    } else if (data) {
-      console.log('Please see your email')
+      alert(error)
+    }
+  }
+  async function singIn () {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    })
+
+    if (data) {
+      console.log(data)
+    }
+    if (error) {
+      alert(error)
     }
   }
 
@@ -88,7 +104,7 @@ function App () {
     <div className='App'>
       <Container>
         {user === null
-          ? <UserRegistration magicLinkLogin={magicLinkLogin} setEmail={setEmail} />
+          ? <UserRegistration singIn={singIn} singUp={singUp} setEmail={setEmail} setPassword={setPassword} />
           : <MainPage signOut={signOut} uploadImage={uploadImage} downloadAll={downloadAll} deleteImage={deleteImage} images={images} user={user} CDNURL={CDNURL} />}
       </Container>
     </div>
