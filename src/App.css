@@ -2,10 +2,71 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
   margin: 0 auto;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+
+}
+
+
+.blob {
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  transform: scale(0.6);
+  top: -10%;
+  left: 5%;
+  rotate: 51deg;
+  z-index: -1;
+
+  width: 750.2333374023438px;
+  height: 655.9392700195312px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%22750.233%22 height=%22655.939%22 viewBox=%22126.405 113.121 750.233 655.939%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23FEE140%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23FA709A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M848.5 598Q770 696 683 745.5t-165.5-5q-78.5-54.5-221-22t-161.5-93q-19-125.5 4-248T299.5 281Q437 307 544 171.5T648.5 215q-2.5 179 138 232t62 151Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M848.5 598Q770 696 683 745.5t-165.5-5q-78.5-54.5-221-22t-161.5-93q-19-125.5 4-248T299.5 281Q437 307 544 171.5T648.5 215q-2.5 179 138 232t62 151Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.blob2 {
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  transform: scale(0.4);
+  top: -10%;
+  left: 40%;
+  rotate: 11deg;
+  z-index: -1;
+
+  width: 814.4303588867188px;
+  height: 812.96337890625px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%22814.43%22 height=%22812.963%22 viewBox=%2299.078 108.689 814.43 812.963%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23FEE140%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23FA709A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M910.5 643Q894 786 772 873.5t-248.5 16Q397 818 279 782T118.5 623q-42.5-123 8-240.5T291 237q114-28 232.5-100.5t187 44Q779 297 853 398.5T910.5 643Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M910.5 643Q894 786 772 873.5t-248.5 16Q397 818 279 782T118.5 623q-42.5-123 8-240.5T291 237q114-28 232.5-100.5t187 44Q779 297 853 398.5T910.5 643Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.blob3 {
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  transform: scale(0.4);
+  top: 50%;
+  left: 30%;
+  rotate: 11deg;
+  z-index: -1;
+
+  width: 664.985107421875px;
+  height: 555.5015869140625px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%22664.985%22 height=%22555.502%22 viewBox=%22140.392 165.636 664.985 555.502%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23FEE140%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23FA709A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M736.5 608.5Q625 717 497.5 721t-277-108.5Q71 500 200.5 352.5T520 171q190-34 259 147.5t-42.5 290Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M736.5 608.5Q625 717 497.5 721t-277-108.5Q71 500 200.5 352.5T520 171q190-34 259 147.5t-42.5 290Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+
+
+.mainPage,
+#root {
+  padding: 1rem;
 }
 
 .logo {
@@ -20,6 +81,47 @@
 
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.title {
+  font-size: calc(20px + 3vmin);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+  max-width: 80%;
+  padding: 7rem;
+
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 @keyframes logo-spin {
@@ -92,6 +194,7 @@
 
 .imageCard>a {
   display: flex;
+  flex-direction: column;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -131,4 +234,24 @@
   display: grid;
   gap: 2px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  width: 100%;
+}
+
+.backRoute {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  background: none;
+  color: var(--text);
+}
+
+.backRoute>svg {
+  display: flex;
+  place-items: center;
+  min-height: 30px;
+  min-width: 30px;
+  color: white;
 }

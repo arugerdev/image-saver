@@ -14,13 +14,17 @@ export default function MainPage ({ signOut, uploadImage, downloadAll, deleteIma
       <hr />
       <h3>Your images</h3>
       <header className='imagesFilterSection'>
-        <button
-          onClick={() => downloadAll()}
-          className='imagesFilter_downloadAll'
-        >
+        {(images.length > 0) &&
+          <>
 
-          <svg fill='currentcolor' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path d='M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z' /></svg>
-        </button>
+            <button
+              onClick={() => downloadAll()}
+              className='imagesFilter_downloadAll'
+            >
+              <svg fill='currentcolor' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path d='M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z' /></svg>
+            </button>
+
+          </>}
       </header>
       <section style={{ paddingBottom: '3rem' }} className='imagesGrid'>
         {(images) &&
