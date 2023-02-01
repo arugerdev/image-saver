@@ -1,0 +1,133 @@
+#root {
+  min-height: 100vh;
+  padding: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.imagesFilterSection {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  padding: 50px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imagesFilter_downloadAll {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  background: lightgray;
+  width: 40px;
+  height: 40px;
+}
+
+.imagesFilter_downloadAll>svg {
+  display: flex;
+  place-items: center;
+  min-height: 30px;
+  min-width: 30px;
+  color: white;
+}
+
+
+.imageCard {
+  display: flex;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.imageCard:hover {
+  transform: scale(1.05);
+}
+
+.imageCard>a {
+  display: flex;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.imageCard>a>img {
+  display: flex;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #333;
+}
+
+.imageCard .imageCard_removeButton {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: rgb(255, 70, 70);
+
+}
+
+.imageCard .imageCard_removeButton>svg {
+  color: white;
+  width: 25px;
+  min-width: 25px;
+  min-height: 25px;
+}
+
+.imagesGrid {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
