@@ -44,7 +44,7 @@ function App () {
 
   async function magicLinkLogin () {
     const { data, error } = await supabase.auth.signInWithOtp({
-      email
+      email, options: { emailRedirectTo: 'https://image-saver.vercel.app' }
     })
 
     if (error) {
@@ -86,7 +86,7 @@ function App () {
 
   return (
     <div className='App'>
-      <Container >
+      <Container>
         {user === null
           ? <UserRegistration magicLinkLogin={magicLinkLogin} setEmail={setEmail} />
           : <MainPage signOut={signOut} uploadImage={uploadImage} downloadAll={downloadAll} deleteImage={deleteImage} images={images} user={user} CDNURL={CDNURL} />}
