@@ -9,7 +9,7 @@ export default function MainPage ({ signOut, uploadImage, downloadAll, deleteIma
       <p>Usa el boton de "Selecionar archivo" para subir fotos de tu galería.</p>
 
       <Form.Group className='mb-3' style={{ maxWidth: '500px' }}>
-        <Form.Control type='file' accept='image/png, image/jpg' onChange={(e) => uploadImage(e)} />
+        <Form.Control type='file' accept='image/png, image/jpg' onChange={(e) => uploadImage(e)} multiple />
       </Form.Group>
       <hr />
       <h3>Your images</h3>

@@ -24,6 +24,7 @@ function App () {
     })
 
     if (data !== null) {
+      console.log(data)
       setImages(data)
     }
   }
@@ -62,16 +63,15 @@ function App () {
   }
 
   async function signOut () {
-    const { error } = await supabase.auth.signOut()
+    await supabase.auth.signOut()
   }
 
   async function uploadImage (e) {
-    const file = e.target.files[0]
+    const files = e.target.files
+    for await (const newFile of files) {
+      const { data } = await supabase.storage.from('images').upload(user.id + '/' + uuidv4(), newFile)
 
-    const { data } = await supabase.storage.from('images').upload(user.id + '/' + uuidv4(), file)
-
-    if (data) {
-      getImages()
+      if (data) { getImages() }
     }
   }
 
