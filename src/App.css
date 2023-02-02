@@ -251,3 +251,10 @@
   min-width: 30px;
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .register {
+    padding: 1rem;
+  }
+
+}
