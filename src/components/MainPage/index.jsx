@@ -15,7 +15,7 @@ export default function MainPage ({ signOut, uploadImage, downloadAll, deleteIma
       <header className='imagesFilterSection'>
         {(images.length > 0) &&
           <>
-
+            <label>Descargar todas las fotos: </label>
             <button
               onClick={() => downloadAll()}
               className='imagesFilter_downloadAll'
