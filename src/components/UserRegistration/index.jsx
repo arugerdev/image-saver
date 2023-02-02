@@ -1,63 +1,10 @@
-
-import { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
-
-export default function UserRegistration ({ singUp, singIn, setEmail, setPassword }) {
-  const [type, setType] = useState('SignUp')
-
+import { FormUserRegister } from '../FormUserRegister'
+export default function UserRegistration ({ signUp, signIn, updateEmail, udpatePassword }) {
   return (
     <>
+      <svg style={{ display: 'flex', width: '120px', height: '120px', padding: '2rem' }} fill='currentcolor' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path d='M1.859 6l-.489-2h21.256l-.491 2h-20.276zm1.581-4l-.439-2h17.994l-.439 2h-17.116zm20.56 16h-24l2 6h20l2-6zm-20.896-2l-.814-6h19.411l-.839 6h2.02l1.118-8h-24l1.085 8h2.019zm2.784-3.995c-.049-.555.419-1.005 1.043-1.005.625 0 1.155.449 1.185 1.004.03.555-.438 1.005-1.044 1.005-.605 0-1.136-.449-1.184-1.004zm7.575-.224l-1.824 2.68-1.813-1.312-2.826 2.851h10l-3.537-4.219z' /></svg>
       <h1 className='title'>ImageSaver</h1>
-
-      {(type === 'SignUp') &&
-        <>
-          <Form>
-            <Form.Group className='mb-3' style={{ maxWidth: '500px', display: 'flex', gap: '8px', flexDirection: 'column' }}>
-              <Form.Label>Registrate para entrar en la web</Form.Label>
-              <Form.Control type='email' placeholder='Inserta un email...' onChange={(e) => setEmail(e.target.value)} />
-              <Form.Control autoComplete='current-password' type='password' placeholder='Inserta una contraseña...' onChange={(e) => setPassword(e.target.value)} />
-            </Form.Group>
-            <Button
-              onClick={(e) => {
-                e.preventDefault()
-                singUp()
-              }} variant='primary'
-            >Registrarse
-            </Button>
-          </Form>
-          <button
-            onClick={(e) => {
-              e.preventDefault()
-              setType('SignIn')
-            }} style={{ background: 'none', color: '#0d92ff', textDecoration: 'underline' }}
-          >Iniciar Sesión
-          </button>
-        </>}
-
-      {(type === 'SignIn') &&
-        <>
-          <Form>
-            <Form.Group className='mb-3' style={{ maxWidth: '500px', display: 'flex', gap: '8px', flexDirection: 'column' }}>
-              <Form.Label>Inicia Sesión</Form.Label>
-              <Form.Control type='email' placeholder='Inserta tu email...' onChange={(e) => setEmail(e.target.value)} />
-              <Form.Control autoComplete='current-password' type='password' placeholder='Inserta tu contraseña...' onChange={(e) => setPassword(e.target.value)} />
-            </Form.Group>
-            <Button
-              onClick={(e) => {
-                e.preventDefault()
-                singIn()
-              }} variant='primary'
-            >Iniciar Sesión
-            </Button>
-          </Form>
-          <button
-            onClick={(e) => {
-              e.preventDefault()
-              setType('SignUp')
-            }} style={{ background: 'none', color: '#0d92ff', textDecoration: 'underline' }}
-          >Registrarse
-          </button>
-        </>}
+      <FormUserRegister signUp={signUp} signIn={signIn} setEmail={updateEmail} setPassword={udpatePassword} />
     </>
 
   )

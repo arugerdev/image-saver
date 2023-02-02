@@ -3,16 +3,15 @@ import { Form, Button } from 'react-bootstrap'
 export default function MainPage ({ signOut, uploadImage, downloadAll, deleteImage, images, user, CDNURL }) {
   return (
     <>
-      <h1>Your ImageSaver</h1>
-      <p>Usuario actual: {user.username}</p>
-      <p>Correo: {user.email}</p>
+      <h1 className='title'>ImageSaver</h1>
+      <p>Cuenta: {user.email}</p>
       <p>Usa el boton de "Selecionar archivo" para subir fotos de tu galería.</p>
 
       <Form.Group className='mb-3' style={{ maxWidth: '500px' }}>
         <Form.Control type='file' accept='image/png, image/jpg' onChange={(e) => uploadImage(e)} multiple />
       </Form.Group>
       <hr />
-      <h3>Your images</h3>
+      <h3>Tus fotos:</h3>
       <header className='imagesFilterSection'>
         {(images.length > 0) &&
           <>
