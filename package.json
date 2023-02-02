@@ -28,7 +28,10 @@
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json",
     "rules": {
-      "no-alert": "warn"
+      "no-alert": "off"
+    },
+    "globals": {
+      "alert": true
     }
   }
 }
