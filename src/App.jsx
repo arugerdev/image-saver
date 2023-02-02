@@ -18,7 +18,6 @@ function App () {
 
   async function getImages () {
     const { data } = await supabase.storage.from('images').list(user?.id + '/', {
-      limit: 100,
       offset: 0,
       sortBy: { column: 'name', order: 'asc' }
     })
