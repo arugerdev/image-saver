@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver'
 import UserRegistration from './components/UserRegistration'
 import MainPage from './components/MainPage'
 
-function App () {
+function App() {
   const user = useUser()
   const supabase = useSupabaseClient()
   const [email, setEmail] = useState('')
@@ -16,7 +16,7 @@ function App () {
 
   const CDNURL = 'https://keupyfhcksedgvzqhesn.supabase.co/storage/v1/object/public/images/'
 
-  async function getImages () {
+  async function getImages() {
     const { data } = await supabase.storage.from('images').list(user?.id + '/', {
       limit: 100,
       offset: 0,
@@ -35,13 +35,13 @@ function App () {
     }
   }, [user])
 
-  function downloadAll () {
+  function downloadAll() {
     images.forEach(item => {
       saveAs(CDNURL + user.id + '/' + item.name, item.name)
     })
   }
 
-  async function singUp () {
+  async function singUp() {
     const { error } = await supabase.auth.signUp({
       email,
       password
@@ -51,7 +51,7 @@ function App () {
       alert(error)
     }
   }
-  async function singIn () {
+  async function singIn() {
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password
@@ -62,11 +62,11 @@ function App () {
     }
   }
 
-  async function signOut () {
+  async function signOut() {
     await supabase.auth.signOut()
   }
 
-  async function uploadImage (e) {
+  async function uploadImage(e) {
     const files = e.target.files
     for await (const newFile of files) {
       const { data } = await supabase.storage.from('images').upload(user.id + '/' + uuidv4(), newFile)
@@ -75,7 +75,7 @@ function App () {
     }
   }
 
-  async function deleteImage (imageName) {
+  async function deleteImage(imageName) {
     const { error } = await supabase.storage.from('images').remove([user.id + '/' + imageName])
 
     if (!error) {
@@ -84,16 +84,18 @@ function App () {
   }
 
   return (
-    <div className='App'>
+    <>
+      <div className='App'>
+        <section className={'mainContainer' + (user === null ? ' register' : ' mainPage')}>
+          {user === null
+            ? <UserRegistration singIn={singIn} singUp={singUp} setEmail={setEmail} setPassword={setPassword} />
+            : <MainPage signOut={signOut} uploadImage={uploadImage} downloadAll={downloadAll} deleteImage={deleteImage} images={images} user={user} CDNURL={CDNURL} />}
+        </section>
+      </div>
       <div className='blob' />
       <div className='blob2' />
       <div className='blob3' />
-      <section className={'mainContainer' + (user === null ? ' register' : ' mainPage')}>
-        {user === null
-          ? <UserRegistration singIn={singIn} singUp={singUp} setEmail={setEmail} setPassword={setPassword} />
-          : <MainPage signOut={signOut} uploadImage={uploadImage} downloadAll={downloadAll} deleteImage={deleteImage} images={images} user={user} CDNURL={CDNURL} />}
-      </section>
-    </div>
+    </>
   )
 }
 

@@ -10,7 +10,6 @@
 
 }
 
-
 .blob {
   display: flex;
   overflow: hidden;
@@ -19,7 +18,7 @@
   top: -10%;
   left: 5%;
   rotate: 51deg;
-  z-index: -1;
+  color: var(--text);
 
   width: 750.2333374023438px;
   height: 655.9392700195312px;
@@ -36,7 +35,6 @@
   top: -10%;
   left: 40%;
   rotate: 11deg;
-  z-index: -1;
 
   width: 814.4303588867188px;
   height: 812.96337890625px;
@@ -53,7 +51,6 @@
   top: 50%;
   left: 30%;
   rotate: 11deg;
-  z-index: -1;
 
   width: 664.985107421875px;
   height: 555.5015869140625px;
@@ -61,7 +58,6 @@
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%22664.985%22 height=%22555.502%22 viewBox=%22140.392 165.636 664.985 555.502%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23FEE140%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23FA709A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M736.5 608.5Q625 717 497.5 721t-277-108.5Q71 500 200.5 352.5T520 171q190-34 259 147.5t-42.5 290Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M736.5 608.5Q625 717 497.5 721t-277-108.5Q71 500 200.5 352.5T520 171q190-34 259 147.5t-42.5 290Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
-
 
 
 .mainPage,
