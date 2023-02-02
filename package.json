@@ -31,7 +31,8 @@
       "no-alert": "off"
     },
     "globals": {
-      "alert": true
+      "alert": true,
+      "IntersectionObserver": true
     }
   }
 }

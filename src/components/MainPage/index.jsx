@@ -1,4 +1,4 @@
-import ImageCard from '../ImageCard'
+import LazyImageCard from '../ImageCard'
 import { Form, Button } from 'react-bootstrap'
 export default function MainPage ({ signOut, uploadImage, downloadAll, deleteImage, images, user, CDNURL }) {
   return (
@@ -29,7 +29,7 @@ export default function MainPage ({ signOut, uploadImage, downloadAll, deleteIma
         {(images) &&
               images.map((item) => {
                 return (
-                  <ImageCard handleRemove={() => deleteImage(item.name)} key={CDNURL + user.id + '/' + item.name} data={item} url={CDNURL + user.id + '/' + item.name} />
+                  <LazyImageCard handleRemove={() => deleteImage(item.name)} key={CDNURL + user.id + '/' + item.name} data={item} url={CDNURL + user.id + '/' + item.name} />
                 )
               })}
       </section>

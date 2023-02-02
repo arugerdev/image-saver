@@ -10,6 +10,14 @@
 
 }
 
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
+
 .blob {
   display: flex;
   overflow: hidden;
@@ -191,6 +199,7 @@
   cursor: pointer;
   max-width: 400px;
   max-height: 400px;
+  min-height: 200px;
 }
 
 .imageCard:hover {
